@@ -1,0 +1,55 @@
+env:
+    global:
+        - PLAT=x86_64
+        - BUILD_COMMIT=bdc56519e465f82491f2dba57a92488db7aa7a64
+
+language: python
+# Default Python version is usually 2.7
+python: 3.5
+sudo: required
+dist: trusty
+
+matrix:
+  exclude:
+      # Exclude the default Python 3.5 build
+      - python: 3.5
+  include:
+    - os: osx
+      language: objective-c
+      env:
+        - MB_PYTHON_VERSION=2.7
+        - NP_BUILD_DEP=1.9.3
+        - NP_TEST_DEP=1.9.3
+        - PANDAS_DEP="0.20.1"
+    - os: osx
+      language: objective-c
+      env:
+        - MB_PYTHON_VERSION=3.5
+        - NP_BUILD_DEP="1.9.3"
+        - NP_TEST_DEP="1.9.3"
+        - PANDAS_DEP="0.20.1"
+    - os: osx
+      language: objective-c
+      env:
+        - MB_PYTHON_VERSION=3.6
+        - NP_BUILD_DEP="1.11.3"
+        - NP_TEST_DEP="1.11.3"
+        - PANDAS_DEP="0.20.1"
+
+before_install:
+    - brew uninstall boost
+    - BUILD_DEPENDS="numpy==$NP_BUILD_DEP six cython"
+    - TEST_DEPENDS="numpy==$NP_TEST_DEP six pandas==$PANDAS_DEP"
+    - source multibuild/common_utils.sh
+    - source multibuild/travis_steps.sh
+    - before_install
+
+install:
+    - clean_code arrow $BUILD_COMMIT
+    - build_wheel arrow $PLAT
+
+script:
+    - echo "SCRIPT"
+
+after_success:
+    - echo "After success"
