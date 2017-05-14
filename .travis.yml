@@ -43,12 +43,14 @@ install:
 - build_wheel arrow $PLAT
 script:
 - echo "SCRIPT"
+- pwd
 after_success:
 - echo "After success"
+- pwd
 
 deploy:
   provider: bintray
-  file: descriptor.json
+  file: "descriptor.json"
   user: xhochy
   key:
     secure: Fb4R4YAhTCXGtavVB4CtHzWkQeJiny4rAuyJbScgQkaqaT7SG+rywA8pIOHPSSPf8yRiz25Z/+8aVEFvWqcHLQtFf8peTiJMmqYoMCQf4WjV1wldDwysr+NinGs0jbEAqAWJ127mNLELdn1wIduBXupgTG8MKFH+aR2O8Rdi2S5Od6Xk1TPLlEsvSlsN4IHGKN7qHsCeiMbzPM/R3lWyaNa92m1qhd2K8ypUtBPKgqemp0ZKrNHTDmAs6PmCNryPLA71jcwA9mPwVRfV+H6/4xNKpnQkFC2TfMok7JeMvru4wKhgWtmU0J0t4LYHqNcNQyhqlQD60VEwNs987bTPTKRPbORdgyP1v/ArthQEDD61o7V8jazoXudL8SwQj/mFPzF+o1t5D06300MCesSijuo0UgvvbtyZHN8SzudxUCZSrB+mSXeJ5GR2viSY3ndxqwPH2wMi/ZzO93Qxr2b8G7gTwDrX9ffhRkSL/NchdxRuUwOf5ejp8Yy2qVyjFMEMZWNemNhsFg4qDCAxv0pnAk/0N0kPE0wXrVbQW3kK/JywtV03r8GNiemqfm23d4KTwPH21FU4FpCbEpT4S7yUzBju4xpY9JyPBnvi8ZeQoqG5FUv+CcMUiCf2nPdil9RAs1maK2D6WPnSI02AicIkY0bv8/gXTsSgXzncOsxi/+E=

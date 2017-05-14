@@ -55,4 +55,5 @@ function build_wheel {
 
     pip install delocate==0.6.4
     delocate-wheel -L . -v python/dist/*.whl
+    popd
 }
