@@ -16,8 +16,8 @@ function build_wheel {
     ./bjam "cxxflags=-fPIC ${CFLAGS}" cflags="-fPIC ${CXXFLAGS}" --prefix=/usr/local --with-filesystem --with-date_time --with-system --with-regex install
     popd
 
-    export CFLAGS="-arch x86_64"
-    export CXXFLAGS="-arch x86_64"
+    # export CFLAGS="-arch x86_64"
+    # export CXXFLAGS="-arch x86_64"
     export ARROW_HOME=/usr/local/
     export PARQUET_HOME=/usr/local/
     pip install cython==0.25.2 numpy==${NP_TEST_DEP}
