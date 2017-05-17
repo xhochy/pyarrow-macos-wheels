@@ -42,6 +42,7 @@ function build_wheel {
     popd
 
     unset ARROW_HOME
+    unset PARQUET_HOME
     export PYARROW_WITH_PARQUET=1
     export PYARROW_WITH_JEMALLOC=1
     export PYARROW_BUNDLE_ARROW_CPP=1
