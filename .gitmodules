@@ -3,4 +3,4 @@
 	url = https://github.com/matthew-brett/multibuild.git
 [submodule "arrow"]
 	path = arrow
-	url = https://github.com/xhochy/arrow.git
+	url = https://github.com/apache/arrow.git
