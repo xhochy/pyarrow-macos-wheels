@@ -1,7 +1,7 @@
 env:
   global:
   - PLAT=x86_64
-  - BUILD_COMMIT=a8f8ba0cbcf5f596f042e90b7a208e7a0c3925b7
+  - BUILD_COMMIT=46315431aeda3b6968b3ac4c1087f6d41052b99d
 language: python
 python: 3.5
 sudo: required
@@ -16,21 +16,21 @@ matrix:
     - MB_PYTHON_VERSION=2.7
     - NP_BUILD_DEP=1.10.1
     - NP_TEST_DEP=1.10.1
-    - PANDAS_DEP="0.20.1"
+    - PANDAS_DEP="0.20.2"
   - os: osx
     language: objective-c
     env:
     - MB_PYTHON_VERSION=3.5
     - NP_BUILD_DEP="1.10.1"
     - NP_TEST_DEP="1.10.1"
-    - PANDAS_DEP="0.20.1"
+    - PANDAS_DEP="0.20.2"
   - os: osx
     language: objective-c
     env:
     - MB_PYTHON_VERSION=3.6
     - NP_BUILD_DEP="1.11.3"
     - NP_TEST_DEP="1.11.3"
-    - PANDAS_DEP="0.20.1"
+    - PANDAS_DEP="0.20.2"
 before_install:
 - brew uninstall boost
 - BUILD_DEPENDS="numpy==$NP_BUILD_DEP six cython"
