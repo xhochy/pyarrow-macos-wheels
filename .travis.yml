@@ -33,6 +33,8 @@ matrix:
     - PANDAS_DEP="0.20.2"
 before_install:
 - brew uninstall boost
+- brew update
+- brew upgrade cmake
 - BUILD_DEPENDS="numpy==$NP_BUILD_DEP six cython"
 - TEST_DEPENDS="numpy==$NP_TEST_DEP six pandas==$PANDAS_DEP"
 - source multibuild/common_utils.sh
