@@ -48,8 +48,8 @@ function build_wheel {
     export PYARROW_BUNDLE_ARROW_CPP=1
     export PYARROW_BUILD_TYPE='release'
     pushd python
-    echo "python setup.py build_ext --inplace --with-parquet --with-jemalloc --bundle-arrow-cpp"
-    python setup.py build_ext --inplace --with-parquet --with-jemalloc --bundle-arrow-cpp
+    echo "python setup.py build_ext --inplace --with-parquet --bundle-arrow-cpp"
+    python setup.py build_ext --inplace --with-parquet --bundle-arrow-cpp
     python setup.py bdist_wheel
     ls -l dist/
     popd
