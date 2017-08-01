@@ -1,7 +1,7 @@
 env:
   global:
   - PLAT=x86_64
-  - BUILD_COMMIT=46315431aeda3b6968b3ac4c1087f6d41052b99d
+  - BUILD_COMMIT=e9f76e125b836d0fdc0a533e2fee3fca8bf4c1a1
 language: python
 python: 3.5
 sudo: required
